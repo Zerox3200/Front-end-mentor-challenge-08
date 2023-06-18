@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.main_body {
+    height: 355px;
+    width: 372px;
+    margin: 132px auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 24% 71%;
+    row-gap: 18px;
+}
+
+/* Create first part in main body */
+.main_body_pt1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 12px;
+    background-color: hsl(10.07deg 79.01% 64.51%);
+    color: white;
+    border-radius: 9px;
+}
+
+.main_body_pt1_1 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 7px;
+}
+
+.main_body_pt1_1 p:first-of-type {
+    font-size: 11px;
+}
+
+.main_body_pt1_1 p:nth-of-type(2) {
+    font-size: 18px;
+}
+
+.main_body_pt1_2 {
+    width: 89px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_body_pt1_2 .circle {
+    border: solid black 1px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+}
+
+.main_body_pt1_2 .circle::after {
+    content: "";
+    border: solid white 1px;
+    border-radius: 50%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 15px;
+}
+
+/* Create second part in main body */
+.main_body_pt2 {
+    border: solid black 1px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 9px;
+}
+
+.main_body_pt2_head {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.main_body_pt2_head p {
+    color: hsl(25, 47%, 15%);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.main_body_pt2_body {
+    height: 119px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 17px;
+    position: relative;
+}
+
+.main_body_pt2_body::after {
+    content: "";
+    position: absolute;
+    bottom: -8%;
+    left: 5%;
+    height: 0px;
+    width: 90%;
+    border: solid #00000042 1px;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+}
+
+.Day1,
+.Day2,
+.Day3,
+.Day4,
+.Day5,
+.Day6,
+.Day7 {
+    width: calc(76%/7);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.chart1,
+.chart2,
+.chart3,
+.chart4,
+.chart5,
+.chart6,
+.chart7 {
+    border: solid transparent 1px;
+    width: 100%;
+    background-color: hsl(10.07deg 79.01% 64.51%);
+    border-radius: 5px;
+    position: relative;
+}
+
+.chart3 {
+    background-color: #76b5bc;
+}
+
+.chart1::after,
+.chart2::after,
+.chart3::after,
+.chart4::after,
+.chart5::after,
+.chart6::after,
+.chart7::after {
+    content: attr(data-content);
+    position: absolute;
+    border: solid black 1px;
+    bottom: 100%;
+    left: -23%;
+    border-radius: 3px;
+    background-color: #3a2517;
+    color: white;
+    margin-bottom: 4px;
+    padding: 2px 1px;
+    text-align: center;
+    opacity: 0;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    transition-property: all;
+
+}
+
+.chart1:hover::after,
+.chart2:hover::after,
+.chart3:hover::after,
+.chart4:hover::after,
+.chart5:hover::after,
+.chart6:hover::after,
+.chart7:hover::after {
+    opacity: 1;
+}
+
+/* Create the foot of the main body */
+.main_body_pt2_footer {
+    height: 71px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 17px;
+}
+
+
+.main_body_pt2_footer_1 p:first-of-type {
+    font-size: 11px;
+}
+
+.main_body_pt2_footer_1 p:nth-of-type(2) {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.main_body_pt2_footer_2 p:first-of-type {
+    font-size: 13px;
+    font-weight: bolder;
+    opacity: 0.7;
+}
+
+.main_body_pt2_footer_2 p:nth-of-type(2) {
+    font-size: 13px;
+    font-weight: bolder;
+    opacity: 0.7;
+}
+
+.Day1 p,
+.Day2 p,
+.Day3 p,
+.Day4 p,
+.Day5 p,
+.Day6 p,
+.Day7 p {
+    text-transform: uppercase;
+}
+
+@media screen and (max-width:768px) {
+    .main_body {
+        width: 269px;
+    }
+
+    .Day1 p,
+    .Day2 p,
+    .Day3 p,
+    .Day4 p,
+    .Day5 p,
+    .Day6 p,
+    .Day7 p {
+        font-size: 14px;
+    }
+
+    .Day1,
+    .Day2,
+    .Day3,
+    .Day4,
+    .Day5,
+    .Day6,
+    .Day7 {
+        width: calc(93%/7);
+        align-items: center;
+    }
+
+    .main_body_pt2_body {
+        padding: 0px 6px;
+    }
+}
